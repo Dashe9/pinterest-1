@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> pinterest</i></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .masonry-column {
+        padding: 0 0.5rem;
+    }
+
+    .masonry-layout {
+        column-count: 4;
+        column-gap: 1rem;
+    }
+
+    @media (max-width: 1200px) {
+        .masonry-layout {
+            column-count: 3;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .masonry-layout {
+            column-count: 2;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .masonry-layout {
+            column-count: 1;
+        }
+    }
+
+    .image-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .image-container img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    /* Save Icon at the top */
+    .save-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    /* Save Button at the bottom */
+    .save-btn {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    /* Show elements on hover */
+    .image-container:hover .save-icon,
+    .image-container:hover .save-btn {
+        display: block;
+    }
+    .glass-nav{
+        
+        background: rgba(255, 255, 255, 0.31);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+</style >
+
+<body class="bg-secondary">
+    <nav class="navbar navbar-expand-lg glass-nav sticky-top">
+        <div class="container-fluid align-items-center">
+            <div class="row w-100">
+                <div class="col-md-10 d-flex align-items-center ">
+                    <a class="navbar-brand" href="#">
+                        <i class="fab fa-pinterest fa-lg text-danger"></i>
+                    </a>
+                    <a href="/index.html"><button class="btn  mx-2" type="button">Home</button></a>
+                    <a href="/search.html"> <button class="btn " type="button">Create</button></a>
+                    <a href="/signal.html"><button class="btn " type="button">Single page</button></a>
+                    <form class="d-flex p-2 bd-highlight">
+                        <input class="form-control" type="search" placeholder="Search for feshion" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col-md-2 d-flex justify-content-end justify-content-evenly">
+                    <a href="#" class="nav-link"><i class="fas fa-bell"></i></a>
+                    <a href="#" class="nav-link"><i class="fas fa-comment"></i></a>
+                    <a href="./profile.html" class="nav-link"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row mb-4">
+            <div class="text-center">
+                <div>
+                    <h2 class="">SEARCH </h2>
+                </div>
+            </div>
+            <div editable="rich py-5">
+                <p class="lead">popular on pinterest<br> FEMAL ART</p>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs1gcxAWQMsldd9-Ft0C-57IhKPgX-YdY_lA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5vhgJrvqaCkE85PWUtVCEuwMWpZK3fOtCQ&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsMwbXVGwgG4W-EWjbFSn3xJzaVYADXjDDgQ&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0NBJnHu5EiX6r8sCINnzRukSaqZtmBvv4w&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSefQVwGSzyeIkkkLSHPrvAHBlaLAcjJ_scsA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX9fU0orBltQGs939geIBZuPeUKdBdSqxspQ&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ST5zXrpO4l_FMtAqbeIdm_bUQ1RpUaJhBw&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8vZO1IhF_6nRx9N7SiHLPeb_ZoCSvVgW3A&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbMOktA_X-oqAEPQW6CcnMwRjyQ96BHJB8w&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszhm4mJ0dt28SJ6mPjIALKAVeuR8lTlG0VA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ42u_4MfI0BOhm3SEaMFmcxWDUpq1-nWK0RA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlMkUv8t2SirEJhIbOfzeAhQFTasV9Cj_8pA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div editable="rich py-5">
+                <p class="lead">popular on pinterest<br> FEMAL STYLE</p>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs1gcxAWQMsldd9-Ft0C-57IhKPgX-YdY_lA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5vhgJrvqaCkE85PWUtVCEuwMWpZK3fOtCQ&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsMwbXVGwgG4W-EWjbFSn3xJzaVYADXjDDgQ&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ0NBJnHu5EiX6r8sCINnzRukSaqZtmBvv4w&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSefQVwGSzyeIkkkLSHPrvAHBlaLAcjJ_scsA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX9fU0orBltQGs939geIBZuPeUKdBdSqxspQ&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8ST5zXrpO4l_FMtAqbeIdm_bUQ1RpUaJhBw&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF8vZO1IhF_6nRx9N7SiHLPeb_ZoCSvVgW3A&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNbMOktA_X-oqAEPQW6CcnMwRjyQ96BHJB8w&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszhm4mJ0dt28SJ6mPjIALKAVeuR8lTlG0VA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ42u_4MfI0BOhm3SEaMFmcxWDUpq1-nWK0RA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded " style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlMkUv8t2SirEJhIbOfzeAhQFTasV9Cj_8pA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div editable="rich py-5">
+                <p class="lead">popular on pinterest<br> I PHONE</p>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4Ii_Wy25_L-9dTDr-NdjhRPCBzHj3hbAnfg&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://www.lifewire.com/thmb/XzxH-f88I5FObXkg60X6rmBCEYI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Image031-8c1279df682e44b8ad1494fe7f64298a.jpg"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://www.apple.com/newsroom/images/2023/09/apple-debuts-iphone-15-and-iphone-15-plus/tile/Apple-iPhone-15-lineup-hero-230912.jpg.og.jpg?202410291756"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9YQ-XOZxnZ8uH0qnG9_1iYs61Yxko6AuGWg&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://www.digitaltrends.com/wp-content/uploads/2024/09/iphone-16-review-17.jpeg?fit=3500%2C2334&p=1"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://cdn.britannica.com/01/178901-050-FF5C52B1/iPhone-6-2014.jpg"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://cdn.britannica.com/09/241709-050-149181B1/apple-iphone-11-2019.jpg"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://cdn.mos.cms.futurecdn.net/yDn3ZSXu9eSBxmXQDZ4PCF-1200-80.jpg"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlBWojpFb-lzcdasdfrPFlYlEKspQkYTLtUA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVTcHa4jezwfnSDZNrcPUzeALWP4WyYZV4g&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHqoKr-AGH8tZupLkUSObgz7W48fci3dRZjA&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 col-xl-2 g-4">
+                <div class="image-container">
+                    <img class="img-fluid rounded" style="width: 150px; height: 150px; object-fit: cover;"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT31y7OlfN7OpPHPLzl_2MDPNAw9V6fjLUeIg&s"
+                        alt="Photo by David Clode" loading="lazy">
+                    <div class="save-icon">
+                        <i class="bi bi-save"></i>
+                    </div>
+                    <button class="save-btn">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
